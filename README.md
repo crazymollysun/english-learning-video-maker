@@ -71,9 +71,22 @@ python burn_lara.py \
 # clip_xxx_keywords.py
 # key = SRT 句子的 0-based 索引（第1句=0）
 # key = 0-based sentence index in SRT (first sentence = 0)
+
+# 关键词选词原则 / Selection principles:
+# ✅ 标注：地道表达、口语短语、高级词汇、容易误解的用法
+#    Mark: idiomatic expressions, colloquial phrases, advanced vocab, easily misunderstood usage
+# ✅ 没有好词时：标注短语的常规用法或句型
+#    When no good word: mark the phrase's common usage or sentence pattern
+# ❌ 不标注：基础词汇（teach/look/talk/time 等所有人都认识的词）
+#    Don't mark: basic vocabulary that everyone knows
+
 KEYWORDS = {
-    0:  [("multitask", "一心多用——同时做多件事 | doing multiple things at once")],
-    3:  [("pontificate", "说教 | to lecture others arrogantly"), ("pushback", "反驳 | resistance/objection")],
+    0:  [("I'd like to", "比 I want to 更礼貌客气的表达 | more polite than 'I want to'")],
+    4:  [("crap", "废话/垃圾——非正式强烈否定 | informal: nonsense, worthless stuff")],
+    14: [("multitask", "一心多用 | doing multiple things at once"),
+         ("set down", "放下——比 put down 更正式 | more formal than 'put down'")],
+    18: [("pontificate", "说教——自以为是地长篇发表意见 | to lecture others arrogantly"),
+         ("pushback", "反驳/阻力 | resistance or objection from others")],
 }
 ```
 
